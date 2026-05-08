@@ -21,7 +21,7 @@ class Span
 		template<typename Itera>
 		void addNumber(Itera begin, Itera end)
 		{
-			if(std::distance(begin, end) + _span.size() > _nb)
+			if(static_cast<unsigned int>(std::distance(begin, end)) > _nb - _span.size())
 				throw maxCap();
 			_span.insert(_span.end(), begin, end);
 		}
